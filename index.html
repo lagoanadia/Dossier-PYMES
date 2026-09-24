@@ -49,6 +49,10 @@
   .stamp{position:absolute; top:clamp(20px,4vw,40px); right:clamp(20px,4vw,40px); width:104px; height:104px; border:2px solid var(--amber); border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Archivo', sans-serif; font-stretch:85%; font-weight:700; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--amber); transform:rotate(-14deg); line-height:1.2;}
   @media (max-width:560px){ .stamp{width:78px; height:78px; font-size:10px;} }
   .cta{display:inline-block; background:var(--amber); color:#FBF3EA; font-family:'Archivo', sans-serif; font-stretch:85%; font-weight:700; font-size:18px; letter-spacing:.02em; text-transform:uppercase; padding:16px 30px;}
+  a.cta{text-decoration:none; transition:background .15s ease;}
+  a.cta:hover{background:#A8441F;}
+  a.cta:focus-visible, a.mail:focus-visible{outline:3px solid var(--amber-soft); outline-offset:3px;}
+  a.mail{color:var(--paper); text-decoration:underline; text-underline-offset:3px;}
   .cta-row{display:flex; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-top:40px;}
   .cta-row .script{font-size:17px;}
   .hero h1{font-size:clamp(44px,8vw,92px); line-height:.95; max-width:13ch;}
@@ -243,7 +247,7 @@
       <span class="chip">WhatsApp que responde solo</span>
       <span class="chip">Menos citas perdidas</span>
     </div>
-    <div class="cta-row"><span class="cta">Reserva tus 15 minutos</span><span class="script">Nadia Lagoa Vilela · A Coruña y Costa da Morte</span></div>
+    <div class="cta-row"><a class="cta" href="mailto:nadialavi.work@gmail.com?subject=Quiero%20reservar%20mis%2015%20minutos&body=Hola%2C%20Nadia%3A%0A%0AMe%20interesa%20el%20diagn%C3%B3stico%20gratuito%20de%2015%20minutos%20para%20mi%20negocio.%0A%0ANombre%20del%20negocio%3A%0ATel%C3%A9fono%20de%20contacto%3A%0ACu%C3%A1ndo%20me%20viene%20bien%3A%0A%0A%C2%A1Gracias%21">Reserva tus 15 minutos</a><span class="script">Nadia Lagoa Vilela · A Coruña y Costa da Morte</span></div>
    </div>
   </section>
 </div>
@@ -441,11 +445,11 @@
       <div>
         <h2>¿Tomamos <em>un café?</em></h2>
         <p>En 15 minutos te enseño cómo te ve hoy un cliente en Google y una mejora que puedes aplicar ya, trabajes conmigo o no.</p>
-        <div class="cta-row" style="margin-top:28px"><span class="cta">Reserva tus 15 minutos</span></div>
+        <div class="cta-row" style="margin-top:28px"><a class="cta" href="mailto:nadialavi.work@gmail.com?subject=Quiero%20reservar%20mis%2015%20minutos&body=Hola%2C%20Nadia%3A%0A%0AMe%20interesa%20el%20diagn%C3%B3stico%20gratuito%20de%2015%20minutos%20para%20mi%20negocio.%0A%0ANombre%20del%20negocio%3A%0ATel%C3%A9fono%20de%20contacto%3A%0ACu%C3%A1ndo%20me%20viene%20bien%3A%0A%0A%C2%A1Gracias%21">Reserva tus 15 minutos</a></div>
         <div class="firma">
           <b>Nadia Lagoa Vilela</b><br>
           Desarrolladora de software<br>
-          nadialavi.work@gmail.com
+          <a class="mail" href="mailto:nadialavi.work@gmail.com?subject=Quiero%20reservar%20mis%2015%20minutos&body=Hola%2C%20Nadia%3A%0A%0AMe%20interesa%20el%20diagn%C3%B3stico%20gratuito%20de%2015%20minutos%20para%20mi%20negocio.%0A%0ANombre%20del%20negocio%3A%0ATel%C3%A9fono%20de%20contacto%3A%0ACu%C3%A1ndo%20me%20viene%20bien%3A%0A%0A%C2%A1Gracias%21">nadialavi.work@gmail.com</a>
         </div>
       </div>
       <div class="ticket">
