@@ -10,6 +10,8 @@
 <meta property="og:title" content="Tu negocio sigue vendiendo cuando tú cierras">
 <meta property="og:description" content="Webs, reservas, asistentes de WhatsApp y paneles de ventas para comercios de A Coruña y la Costa da Morte. Nadia Lagoa Vilela, desarrolladora de software.">
 <meta name="theme-color" content="#1F4D4A">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Work+Sans:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
   :root{
@@ -35,7 +37,10 @@
   .wrap{max-width:1040px; margin:0 auto; padding-inline:24px;}
   @media (max-width:480px){ .wrap{padding-inline:16px;} }
 
-  .ticker{border-bottom:1px dashed var(--line); padding-block:10px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  .ticker{border-bottom:1px dashed var(--line); padding-block:10px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
+
+  .marca{display:inline-flex; align-items:center; gap:10px;}
+  .marca img{width:30px; height:30px; display:block;}
 
   /* ---------- portada ---------- */
   .hero{padding-block:clamp(56px,9vw,104px) clamp(40px,6vw,64px);}
@@ -222,7 +227,7 @@
 <body>
 <div class="wrap">
   <div class="ticker">
-    <span>Servicios digitales para comercios</span>
+    <span class="marca"><img src="favicon.svg" alt="NLV">Servicios digitales para comercios</span>
     <span>A Coruña · Costa da Morte</span>
   </div>
 
