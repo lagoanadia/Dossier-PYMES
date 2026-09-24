@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Dossier · Nadia Lagoa Vilela</title>
+<link rel="stylesheet" href="fonts-local.css">
+<style>
+  @page{size:A4; margin:0;}
+  :root{
+    --paper:#EDE5D6; --paper-2:#E2D8C4; --card:#FFFBF3; --white:#FFFDF8;
+    --ink:#1B2624; --ink-soft:#44504C; --line:#C9BEA8;
+    --mar:#1F4D4A; --mar-2:#173B39; --amber:#C0522B; --amber-soft:#F2D3BF;
+    --wa:#D5EFC9; --ok:#2F6B3E;
+  }
+  *{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  html,body{margin:0; padding:0; background:#888;}
+  body{font-family:'Work Sans', system-ui, sans-serif; color:var(--ink); font-size:11pt; line-height:1.45; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Archivo','Arial Narrow',sans-serif; font-stretch:78%; font-weight:800; text-transform:uppercase; margin:0; color:var(--mar); line-height:.95; letter-spacing:.005em;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .script{font-family:'Fraunces', Georgia, serif; font-style:italic; color:var(--amber);}
+
+  /* ---------- página ---------- */
+  .page{width:210mm; height:297mm; position:relative; overflow:hidden; background:var(--paper); break-after:page; page-break-after:always; margin:0 auto;}
+  .page:last-child{break-after:auto; page-break-after:auto;}
+  @media screen{ .page{margin:10mm auto; box-shadow:0 4px 24px rgba(0,0,0,.35);} }
+  .inner{position:absolute; inset:14mm 16mm 18mm;}
+  .pie{position:absolute; left:16mm; right:16mm; bottom:8mm; display:flex; justify-content:space-between; align-items:center; font-family:'IBM Plex Mono', monospace; font-size:7.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); border-top:1.5pt solid var(--mar); padding-top:2.5mm;}
+  .pie .n{font-family:'Archivo',sans-serif; font-stretch:80%; font-weight:800; font-size:11pt; color:var(--amber);}
+  .logo{display:inline-flex; align-items:center; gap:2.5mm;}
+  .logo svg{width:7mm; height:7mm; display:block;}
+
+  .label{display:inline-block; background:var(--mar); color:var(--paper); font-family:'Archivo',sans-serif; font-stretch:85%; font-weight:700; font-size:10pt; letter-spacing:.1em; text-transform:uppercase; padding:1.6mm 3.2mm;}
+  .tag{font-family:'Archivo',sans-serif; font-stretch:88%; font-weight:700; font-size:10pt; letter-spacing:.16em; text-transform:uppercase; color:var(--amber);}
+  .sello{font-family:'IBM Plex Mono', monospace; font-size:7.5pt; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); border:1pt dashed var(--ink-soft); padding:1mm 2.5mm; background:var(--paper); display:inline-block; transform:rotate(2deg);}
+
+  .cta{display:inline-flex; align-items:center; gap:4mm; background:var(--amber); color:#FFF6EC; font-family:'Archivo',sans-serif; font-stretch:82%; font-weight:800; font-size:17pt; text-transform:uppercase; letter-spacing:.02em; padding:4.5mm 7mm; box-shadow:2.2mm 2.2mm 0 var(--mar);}
+  .cta::after{content:"→";}
+
+  .gana{list-style:none; padding:0; margin:0;}
+  .gana li{display:flex; gap:4mm; align-items:baseline; font-size:12pt; padding:3mm 0; border-bottom:1.8pt solid var(--mar);}
+  .gana li::before{content:""; width:3.2mm; height:3.2mm; background:var(--amber); flex-shrink:0; transform:translateY(.3mm);}
+
+  /* ---------- 1 · portada ---------- */
+  .p1 .marco{position:absolute; inset:12mm; border:2.2mm solid var(--mar); padding:14mm 13mm;}
+  .p1 .stamp{position:absolute; top:10mm; right:10mm; width:34mm; height:34mm; border:.9mm solid var(--amber); border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Archivo',sans-serif; font-stretch:85%; font-weight:800; font-size:10.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--amber); transform:rotate(-14deg); line-height:1.15;}
+  .p1 .stamp::before{content:""; position:absolute; inset:1.6mm; border:.35mm solid var(--amber); border-radius:50%;}
+  .p1 h1{font-size:68pt; line-height:.9; margin-top:9mm; max-width:150mm;}
+  .p1 h1 em{font-style:normal; color:var(--amber);}
+  .p1 .tag-line{font-size:14.5pt; max-width:130mm; margin:9mm 0 0; line-height:1.4;}
+  .p1 .chips{display:flex; flex-wrap:wrap; gap:2.5mm; margin-top:8mm; max-width:150mm;}
+  .p1 .chip{border:.5mm solid var(--mar); color:var(--mar); font-weight:600; font-size:10.5pt; padding:1.6mm 3.4mm;}
+  .p1 .base{position:absolute; left:13mm; right:13mm; bottom:13mm; display:flex; justify-content:space-between; align-items:flex-end; gap:8mm;}
+  .p1 .firma{margin-top:5mm; font-size:10.5pt; color:var(--ink-soft);}
+  .p1 .firma b{display:block; font-family:'Archivo',sans-serif; font-stretch:85%; font-weight:800; text-transform:uppercase; font-size:13pt; color:var(--mar);}
+  .qrbox{background:var(--white); border:.8mm solid var(--mar); padding:2.6mm; width:36mm; text-align:center;}
+  .qrbox svg{width:100%; height:auto; display:block;}
+  .qrbox small{display:block; font-family:'Fraunces',serif; font-style:italic; color:var(--amber); font-size:10.5pt; margin-top:1.6mm;}
+
+  /* ---------- páginas de servicio ---------- */
+  .banda{position:absolute; top:0; left:0; right:0; height:74mm; background:var(--mar); padding:16mm 16mm 0; overflow:hidden;}
+  .banda .gigante{position:absolute; right:10mm; top:-8mm; font-family:'Archivo',sans-serif; font-stretch:78%; font-weight:800; font-size:190pt; line-height:1; color:#2A5C58;}
+  .banda .tag{color:#F08A5D; position:relative;}
+  .banda h2{color:var(--paper); font-size:40pt; margin-top:3.5mm; position:relative; max-width:140mm;}
+  .cuerpo{position:absolute; top:82mm; left:16mm; right:16mm; bottom:22mm; display:flex; flex-direction:column;}
+  .cuerpo .intro{font-size:13pt; line-height:1.45; max-width:165mm; margin:0 0 5mm;}
+  .cuerpo .gana{margin-bottom:6mm;}
+  .escena{flex:1; position:relative; display:flex; gap:7mm; align-items:center; justify-content:center; background:var(--paper-2); border:.6mm solid var(--mar); padding:9mm 7mm 7mm;}
+  .escena .sello{position:absolute; top:-3mm; right:6mm; z-index:2;}
+
+  /* navegador */
+  .browser{width:112mm; background:var(--card); border:.5mm solid var(--mar); overflow:hidden; box-shadow:2mm 2mm 0 var(--mar);}
+  .browser .bar{display:flex; align-items:center; gap:1.4mm; padding:2mm 3mm; background:var(--paper); border-bottom:.4mm solid var(--mar);}
+  .browser .bar i{width:2.2mm; height:2.2mm; border-radius:50%; background:var(--line);}
+  .browser .url{margin-left:2mm; flex:1; font-size:7.5pt; color:var(--ink-soft); background:var(--card); padding:.8mm 2.4mm;}
+  .web-hero{padding:6mm 6mm 5mm; background:#DDB577; color:#34240E;}
+  .web-hero small{font-family:'IBM Plex Mono',monospace; font-size:6.8pt; letter-spacing:.1em; text-transform:uppercase;}
+  .web-hero b{display:block; font-family:'Archivo',sans-serif; font-stretch:85%; text-transform:uppercase; font-size:17pt; font-weight:800; line-height:1.05; margin:1.4mm 0 1mm;}
+  .web-hero span{font-size:9pt;}
+  .btns{display:flex; gap:2mm; margin-top:3.5mm;}
+  .btn-a{background:#34240E; color:#FBF3E2; font-size:8pt; font-weight:600; padding:1.8mm 3mm;}
+  .btn-b{border:.35mm solid #34240E; font-size:8pt; font-weight:600; padding:1.8mm 3mm;}
+  .productos{display:grid; grid-template-columns:repeat(3,1fr); gap:2.4mm; padding:3.5mm 4mm 2mm;}
+  .prod{border:.35mm solid var(--line); padding:2mm; font-size:7.8pt;}
+  .prod .foto{height:12mm; margin-bottom:1.6mm;}
+  .prod b{display:block; font-size:8.2pt;}
+  .prod .p{font-family:'IBM Plex Mono',monospace; color:var(--mar); font-weight:600;}
+  .pago{display:flex; gap:1.5mm; padding:1.5mm 4mm 4mm; font-size:7pt; color:var(--ink-soft);}
+  .pago span{border:.3mm solid var(--line); border-radius:99px; padding:.6mm 2.2mm;}
+
+  /* móvil */
+  .phone{width:58mm; background:#101617; border-radius:8mm; padding:2.4mm; box-shadow:2mm 2mm 0 var(--amber);}
+  .screen{background:var(--card); border-radius:6mm; overflow:hidden; height:108mm; display:flex; flex-direction:column;}
+  .notch{height:5mm; display:flex; justify-content:center; align-items:center;}
+  .notch i{width:16mm; height:1.4mm; border-radius:1mm; background:#101617;}
+  .gsearch{margin:1.4mm 3mm 2.4mm; border:.35mm solid var(--line); border-radius:99px; padding:1.8mm 3mm; font-size:8pt;}
+  .map{height:30mm; margin:0 3mm; position:relative; overflow:hidden; background:
+      linear-gradient(90deg, transparent 48%, #fff 48% 52%, transparent 52%),
+      linear-gradient(0deg, transparent 38%, #fff 38% 42%, transparent 42%),
+      linear-gradient(160deg, #CFE2D6 0%, #C3DAE2 100%);}
+  .pin{position:absolute; left:50%; top:22%; width:6mm; height:6mm; border-radius:50% 50% 50% 0; background:#D1493F; transform:rotate(-45deg);}
+  .pin::after{content:""; position:absolute; inset:1.6mm; border-radius:50%; background:#fff;}
+  .gcard{margin:2.4mm 3mm; padding:2.8mm; border:.35mm solid var(--line); font-size:7.8pt; line-height:1.4;}
+  .gcard b{font-size:9.5pt; display:block;}
+  .gcard .abierto{color:var(--ok); font-weight:600;}
+  .acc{display:flex; gap:1.4mm; margin-top:2.4mm;}
+  .acc span{flex:1; text-align:center; font-size:7pt; font-weight:600; color:#1A5FB4; border:.3mm solid var(--line); border-radius:99px; padding:1.2mm 0;}
+
+  /* whatsapp */
+  .wa-head{background:var(--mar); color:#fff; padding:2.6mm 3.2mm; display:flex; gap:2.4mm; align-items:center;}
+  .av{width:7.5mm; height:7.5mm; border-radius:50%; background:var(--amber-soft); color:var(--mar-2); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:9pt;}
+  .wa-head b{font-size:8.8pt; display:block;}
+  .wa-head small{font-size:6.8pt;}
+  .wa-body{flex:1; background:#E9E2D4; padding:3mm 2.6mm; display:flex; flex-direction:column; gap:2mm;}
+  .msg{max-width:86%; font-size:8.2pt; padding:1.8mm 2.5mm 1.2mm; border-radius:2.4mm; line-height:1.35;}
+  .msg .h{display:block; text-align:right; font-size:6.4pt; color:var(--ink-soft); margin-top:.5mm;}
+  .msg.in{background:#fff; align-self:flex-start;}
+  .msg.out{background:var(--wa); align-self:flex-end;}
+  .huecos{display:flex; gap:1.5mm; margin-top:1.4mm;}
+  .huecos span{background:var(--card); border:.35mm solid var(--mar); color:var(--mar); border-radius:99px; padding:.4mm 2.2mm; font-size:7.6pt; font-weight:700;}
+  .nota{align-self:center; font-family:'IBM Plex Mono',monospace; font-size:6.4pt; letter-spacing:.06em; text-transform:uppercase; background:#fff; color:var(--ink-soft); padding:.6mm 2mm;}
+  .wa-lado{max-width:62mm;}
+  .bocadillo{font-family:'Archivo',sans-serif; font-stretch:80%; font-weight:800; text-transform:uppercase; color:var(--mar); font-size:22pt; line-height:.95;}
+  .bocadillo em{font-style:normal; color:var(--amber);}
+  .wa-lado p{font-size:10.5pt; margin:3mm 0 0; color:var(--ink-soft);}
+
+  /* agenda */
+  .agenda{width:100mm; background:var(--card); border:.5mm solid var(--mar); padding:4.5mm 4.5mm 2mm; box-shadow:2mm 2mm 0 var(--mar);}
+  .agenda .top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:2.5mm;}
+  .agenda .top b{font-family:'Archivo',sans-serif; font-stretch:85%; text-transform:uppercase; font-size:13pt; color:var(--mar);}
+  .agenda .top span{font-size:8pt; color:var(--ink-soft);}
+  .cita{display:grid; grid-template-columns:13mm 1fr auto; gap:3mm; align-items:center; padding:2.6mm 0; border-top:.35mm dashed var(--line); font-size:9.5pt;}
+  .cita .h{font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--mar);}
+  .cita small{display:block; color:var(--ink-soft); font-size:8pt;}
+  .est{font-size:7.5pt; font-weight:700; padding:.8mm 2.4mm; border-radius:99px; white-space:nowrap;}
+  .est.ok{background:#D6EBD4; color:var(--ok);}
+  .est.pend{background:var(--amber-soft); color:#7A3A12;}
+  .est.libre{background:var(--paper); color:var(--mar); border:.3mm solid var(--mar);}
+  .noti{width:56mm; background:#1B2321; color:#fff; border-radius:4mm; padding:3.5mm 4mm; font-size:8.5pt; box-shadow:2mm 2mm 0 var(--amber); align-self:flex-start;}
+  .noti small{display:flex; justify-content:space-between; font-size:6.8pt; color:#B9C2BE; margin-bottom:1.4mm;}
+  .noti b{display:block; margin-bottom:.6mm;}
+  .noti .r{display:flex; gap:2mm; margin-top:2.6mm;}
+  .noti .r span{flex:1; text-align:center; background:#3A4441; border-radius:1.6mm; padding:1.4mm 0; font-weight:600;}
+
+  /* panel */
+  .panel{width:128mm; background:var(--card); border:.5mm solid var(--mar); padding:5mm; box-shadow:2mm 2mm 0 var(--mar); display:grid; grid-template-columns:1fr 1fr; gap:3.5mm;}
+  .kpi{grid-column:1/-1; display:flex; justify-content:space-between; align-items:flex-end;}
+  .kpi small{display:block; font-size:8.5pt; color:var(--ink-soft);}
+  .kpi b{font-family:'Archivo',sans-serif; font-stretch:85%; font-size:26pt; font-weight:800; color:var(--ink); line-height:1;}
+  .kpi .sube{font-family:'IBM Plex Mono',monospace; font-size:8pt; color:var(--ok); font-weight:600;}
+  .barras{grid-column:1/-1; display:grid; grid-template-columns:repeat(7,1fr); gap:2.4mm; align-items:end; height:32mm; padding-bottom:5mm; position:relative; border-bottom:.35mm solid var(--line);}
+  .barras div{background:var(--mar); position:relative;}
+  .barras div.hoy{background:var(--amber);}
+  .barras div span{position:absolute; bottom:-4.6mm; left:0; right:0; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--ink-soft);}
+  .mini{border:.35mm solid var(--line); padding:3mm; font-size:8.5pt;}
+  .mini small{display:block; font-family:'IBM Plex Mono',monospace; font-size:6.8pt; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:1.4mm;}
+  .mini ol{margin:0; padding-left:4.5mm;}
+  .mini.alerta{background:var(--amber-soft); border-color:var(--amber); color:#5A2A0A;}
+
+  /* ---------- 6 · todo en un sitio ---------- */
+  .p6 .top{display:grid; grid-template-columns:1.3fr 14mm 1fr; gap:4mm; align-items:center; margin-top:5mm;}
+  .p6 h2{font-size:34pt; margin:3mm 0 4mm;}
+  .p6 .top p{font-size:11.5pt; margin:0;}
+  .antes{display:flex; flex-wrap:wrap; gap:2mm; margin-top:5mm;}
+  .antes span{font-size:9.5pt; padding:1.2mm 2.8mm; border:.4mm dashed var(--ink-soft); color:var(--ink-soft); text-decoration:line-through; text-decoration-color:var(--amber); text-decoration-thickness:.5mm;}
+  .flecha{font-family:'Archivo',sans-serif; font-weight:800; font-size:44pt; color:var(--amber); text-align:center;}
+  .tuweb{background:var(--card); border:1.6mm solid var(--mar); padding:4.5mm; box-shadow:2.2mm 2.2mm 0 var(--amber);}
+  .tuweb .t{font-family:'Archivo',sans-serif; font-stretch:85%; font-weight:800; text-transform:uppercase; color:var(--mar); font-size:11pt; margin-bottom:3mm;}
+  .galeria{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6mm; margin-bottom:3mm;}
+  .galeria i{aspect-ratio:1; display:block;}
+  .resena{border-top:.6mm solid var(--mar); padding-top:2.4mm; font-size:9pt;}
+  .resena b{color:var(--amber); letter-spacing:.1em;}
+  .resena small{display:block; color:var(--ink-soft); font-size:7.5pt; margin-top:.6mm;}
+  .tambien{margin-top:10mm; border-top:1.8pt solid var(--mar); padding-top:6mm;}
+  .tambien h3{font-size:22pt; margin-bottom:5mm;}
+  .grid-extra{display:grid; grid-template-columns:repeat(3,1fr); gap:4mm;}
+  .extra{border:.6mm solid var(--mar); padding:3.6mm 4mm; background:var(--card);}
+  .extra b{display:block; font-family:'Archivo',sans-serif; font-stretch:85%; font-weight:800; text-transform:uppercase; color:var(--mar); font-size:12.5pt; line-height:1.05; margin-bottom:1.6mm;}
+  .extra span{font-size:9pt; color:var(--ink-soft);}
+  .extra::before{content:""; display:block; width:3mm; height:3mm; background:var(--amber); margin-bottom:1.8mm;}
+
+  /* ---------- 7 · pasos ---------- */
+  .p7 h2{font-size:52pt; margin:6mm 0 12mm; max-width:160mm;}
+  .paso{display:grid; grid-template-columns:34mm 1fr; gap:7mm; align-items:start; padding:8mm 0; border-bottom:1.8pt solid var(--mar);}
+  .paso:first-of-type{border-top:1.8pt solid var(--mar);}
+  .paso .num{font-family:'Archivo',sans-serif; font-stretch:78%; font-weight:800; font-size:92pt; line-height:.8; color:var(--amber);}
+  .paso h3{font-size:24pt; margin-bottom:3mm;}
+  .paso p{margin:0; font-size:12.5pt; max-width:110mm;}
+  .p7 .sello-grande{position:absolute; right:0; bottom:6mm; width:44mm; height:44mm; border:1mm solid var(--mar); border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Archivo',sans-serif; font-stretch:85%; font-weight:800; text-transform:uppercase; color:var(--mar); font-size:12pt; transform:rotate(10deg); line-height:1.1;}
+  .p7 .sello-grande::before{content:""; position:absolute; inset:2mm; border:.35mm solid var(--mar); border-radius:50%;}
+
+  /* ---------- 8 · contraportada ---------- */
+  .p8{background:var(--mar);}
+  .p8 .inner{color:var(--paper);}
+  .p8 h2{color:var(--paper); font-size:84pt; line-height:.86; margin-top:10mm;}
+  .p8 h2 em{font-style:normal; color:#F08A5D;}
+  .p8 .sub{font-size:14.5pt; max-width:120mm; margin:9mm 0 10mm; color:#E4DCCB; line-height:1.4;}
+  .p8 .cta{box-shadow:2.2mm 2.2mm 0 var(--paper);}
+  .p8 .fila{position:absolute; left:0; right:0; bottom:0; display:grid; grid-template-columns:1fr 62mm; gap:10mm; align-items:end;}
+  .ticket{background:var(--white); color:var(--ink); padding:5mm 6mm 6mm; font-family:'IBM Plex Mono',monospace; font-size:9.5pt; line-height:1.9; position:relative; margin-bottom:3mm;}
+  .ticket::after{content:""; position:absolute; left:0; right:0; bottom:-2.4mm; height:2.4mm; background:radial-gradient(circle at 1.6mm 0, var(--white) 1.6mm, transparent 1.7mm) 0 0/3.2mm 2.4mm repeat-x;}
+  .ticket .t{font-weight:600; letter-spacing:.08em; text-transform:uppercase; font-size:8pt; color:var(--ink-soft); border-bottom:.35mm dashed var(--line); padding-bottom:2mm; margin-bottom:2mm;}
+  .ticket .row{display:flex; justify-content:space-between; gap:3mm;}
+  .ticket .tot{border-top:.35mm dashed var(--line); margin-top:2mm; padding-top:2mm; font-weight:600; color:var(--mar);}
+  .p8 .qrbox{width:62mm; border-color:var(--paper); padding:4mm;}
+  .p8 .qrbox small{font-size:12pt;}
+  .contacto{font-size:11pt; color:#E4DCCB; line-height:1.6; margin-top:9mm;}
+  .contacto b{display:block; font-family:'Archivo',sans-serif; font-stretch:85%; font-weight:800; text-transform:uppercase; color:var(--paper); font-size:18pt; line-height:1.1;}
+  .contacto .mail{font-family:'IBM Plex Mono',monospace; font-size:12pt; color:#fff; border-bottom:.5mm solid #F08A5D;}
+  .p8 .pie{color:#B9C9C5; border-top-color:#3E6E6A;}
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · PORTADA ============ -->
+<section class="page p1">
+  <div class="marco">
+    <div class="stamp">Hecho en<br>Galicia</div>
+    <span class="label">Dossier de servicios</span>
+    <h1>Tu negocio sigue vendiendo <em>cuando tú cierras.</em></h1>
+    <p class="tag-line">No te explico lo que hago: te lo enseño. Así quedaría en un negocio como el tuyo.</p>
+    <div class="chips">
+      <span class="chip">Sales en Google Maps</span>
+      <span class="chip">Te encargan y pagan con Bizum</span>
+      <span class="chip">WhatsApp que responde solo</span>
+      <span class="chip">Menos citas perdidas</span>
+    </div>
+    <div class="base">
+      <div>
+        <span class="cta">Reserva tus 15 minutos</span>
+        <div class="firma"><b>Nadia Lagoa Vilela</b>Desarrolladora de software · A Coruña y Costa da Morte</div>
+      </div>
+      <div class="qrbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path fill="#FFFDF8" d="M0 0h29v29H0z"/><path stroke="#173B39" d="M0 0.5h7m1 0h1m2 0h2m2 0h2m2 0h2m1 0h7M0 1.5h1m5 0h1m1 0h1m5 0h2m2 0h1m1 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m3 0h6m4 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h2m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m2 0h1m2 0h2m3 0h1m1 0h2m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m3 0h1m1 0h1m1 0h1m3 0h3m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m3 0h3m2 0h2m1 0h1M0 8.5h1m1 0h2m1 0h3m4 0h3m1 0h4m2 0h1m2 0h1m1 0h2M2 9.5h1m1 0h2m2 0h2m1 0h2m2 0h2m2 0h6m3 0h1M0 10.5h1m2 0h2m1 0h1m2 0h1m1 0h2m1 0h2m6 0h1m1 0h1m1 0h2M0 11.5h3m2 0h1m1 0h3m2 0h4m3 0h1m1 0h2m5 0h1M1 12.5h1m4 0h2m3 0h2m4 0h1m1 0h1m3 0h1m1 0h2M0 13.5h3m5 0h2m2 0h2m3 0h1m1 0h1m2 0h1m3 0h3M4 14.5h1m1 0h3m2 0h1m2 0h1m2 0h1m1 0h1m1 0h4m1 0h3M1 15.5h1m1 0h3m3 0h3m1 0h1m2 0h1m3 0h1m3 0h1m2 0h1M1 16.5h3m1 0h2m1 0h2m1 0h1m3 0h1m2 0h1m1 0h2m2 0h2m1 0h1M2 17.5h1m1 0h1m6 0h3m1 0h2m3 0h2m1 0h1m1 0h3M0 18.5h1m2 0h2m1 0h1m1 0h2m2 0h1m2 0h1m4 0h2m1 0h1m2 0h1M2 19.5h1m1 0h1m2 0h1m9 0h2m1 0h1m1 0h1m1 0h1m1 0h1M1 20.5h1m2 0h1m1 0h1m2 0h1m2 0h2m3 0h10M8 21.5h2m2 0h3m1 0h3m1 0h1m3 0h5M0 22.5h7m1 0h6m3 0h4m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h4m4 0h1m3 0h1m3 0h2m1 0h2M0 24.5h1m1 0h3m1 0h1m3 0h2m2 0h5m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h2m1 0h6m6 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h3m1 0h3m2 0h2m1 0h1m2 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m2 0h7m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1M0 28.5h7m1 0h1m3 0h1m1 0h1m3 0h4m5 0h1"/></svg>
+<small>míralo en vivo →</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 · WEB + GOOGLE ============ -->
+<section class="page">
+  <div class="banda"><div class="gigante">01</div><span class="tag">Servicio 01 · Web + Google Maps</span><h2>Que te encuentren y te compren desde el móvil</h2></div>
+  <div class="cuerpo">
+    <p class="intro">Cuando alguien busca "panadería cerca de mí", apareces tú. Entra, ve lo que tienes y lo encarga.</p>
+    <ul class="gana">
+      <li>Más gente que llega ya con ganas de comprar</li>
+      <li>Pagan con Bizum o tarjeta y recogen en tienda</li>
+      <li>Vendes también de noche y en festivos</li>
+    </ul>
+    <div class="escena">
+      <span class="sello">Ejemplo de una tienda cotidiana</span>
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span class="url">panaderia-afornada.gal</span></div>
+        <div class="web-hero">
+          <small>Corcubión · Abierto hoy hasta las 20:30</small>
+          <b>Panadería A Fornada</b>
+          <span>Pan de leña hecho cada mañana.</span>
+          <div class="btns"><span class="btn-a">Encargar para mañana</span><span class="btn-b">Cómo llegar</span></div>
+        </div>
+        <div class="productos">
+          <div class="prod"><div class="foto" style="background:#D9B37A"></div><b>Bica gallega</b><span class="p">6,50 €</span></div>
+          <div class="prod"><div class="foto" style="background:#9C6B40"></div><b>Pan de centeno</b><span class="p">2,80 €</span></div>
+          <div class="prod"><div class="foto" style="background:#CF9443"></div><b>Empanada</b><span class="p">14,00 €</span></div>
+        </div>
+        <div class="pago"><span>Bizum</span><span>Tarjeta</span><span>Recoger en tienda</span></div>
+      </div>
+      <div class="phone"><div class="screen">
+        <div class="notch"><i></i></div>
+        <div class="gsearch">panadería cerca de mí</div>
+        <div class="map"><span class="pin"></span></div>
+        <div class="gcard"><b>Panadería A Fornada</b>Panadería · Corcubión<br><span class="abierto">Abierto</span> · Cierra a las 20:30
+          <div class="acc"><span>Llamar</span><span>Cómo llegar</span><span>Web</span></div></div>
+      </div></div>
+    </div>
+  </div>
+  <div class="pie"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#1F4D4A"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#C0522B" stroke-width="3"/>
+  <text x="32" y="38.5" text-anchor="middle" font-family="Archivo, 'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="17" letter-spacing="0.5" fill="#EDE5D6">NLV</text>
+</svg>
+Nadia Lagoa Vilela</span><span>nadialavi.work@gmail.com</span><span class="n">02</span></div>
+</section>
+
+<!-- ============ 3 · WHATSAPP ============ -->
+<section class="page">
+  <div class="banda"><div class="gigante">02</div><span class="tag">Servicio 02 · Asistente de WhatsApp</span><h2>Contesta a las 22:47 mientras tú estás en el sofá</h2></div>
+  <div class="cuerpo">
+    <p class="intro">Responde horarios, precios y huecos libres al momento, en castellano o en gallego. Si hace falta una persona, te pasa la conversación.</p>
+    <ul class="gana">
+      <li>Ningún cliente se queda sin respuesta</li>
+      <li>Menos interrupciones mientras atiendes</li>
+      <li>La cita queda apuntada sola</li>
+    </ul>
+    <div class="escena">
+      <span class="sello">Ejemplo de una tienda cotidiana</span>
+      <div class="phone"><div class="screen">
+        <div class="wa-head"><span class="av">R</span><div><b>Peluquería Rías</b><small>Asistente · responde al momento</small></div></div>
+        <div class="wa-body">
+          <span class="nota">Hoy · la tienda está cerrada</span>
+          <div class="msg in">Hola! Tenéis hueco el sábado para cortar y peinar?<span class="h">22:47</span></div>
+          <div class="msg out">¡Hola! El sábado quedan libres estas horas:<div class="huecos"><span>10:30</span><span>12:00</span></div><span class="h">22:47</span></div>
+          <div class="msg in">La de las 12 porfa<span class="h">22:48</span></div>
+          <div class="msg out">Listo ✓ Sábado a las 12:00 con Uxía. Te mando un recordatorio el viernes.<span class="h">22:48</span></div>
+        </div>
+      </div></div>
+      <div class="wa-lado">
+        <div class="bocadillo">La tienda cerrada.<br><em>La cita, hecha.</em></div>
+        <p>Tu cliente pregunta a las once de la noche y tiene respuesta en un segundo. Tú te enteras mañana, con la cita ya en la agenda.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pie"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#1F4D4A"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#C0522B" stroke-width="3"/>
+  <text x="32" y="38.5" text-anchor="middle" font-family="Archivo, 'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="17" letter-spacing="0.5" fill="#EDE5D6">NLV</text>
+</svg>
+Nadia Lagoa Vilela</span><span>nadialavi.work@gmail.com</span><span class="n">03</span></div>
+</section>
+
+<!-- ============ 4 · RESERVAS ============ -->
+<section class="page">
+  <div class="banda"><div class="gigante">03</div><span class="tag">Servicio 03 · Reservas + recordatorios</span><h2>Adiós a las citas en las que no aparece nadie</h2></div>
+  <div class="cuerpo">
+    <p class="intro">Tus clientes reservan desde el móvil y reciben un aviso el día antes. Si alguien cancela, el hueco vuelve a quedar libre para otro.</p>
+    <ul class="gana">
+      <li>Agenda más llena</li>
+      <li>Se acabó llamar uno a uno para confirmar</li>
+      <li>Si quieres, piden señal al reservar</li>
+    </ul>
+    <div class="escena">
+      <span class="sello">Ejemplo de una tienda cotidiana</span>
+      <div class="agenda">
+        <div class="top"><b>Agenda de hoy</b><span>Estudio de tatuaje · jueves</span></div>
+        <div class="cita"><span class="h">10:00</span><div>Laura<small>Diseño floral · antebrazo</small></div><span class="est ok">Confirmada</span></div>
+        <div class="cita"><span class="h">12:30</span><div>Brais<small>Retoque</small></div><span class="est ok">Confirmada</span></div>
+        <div class="cita"><span class="h">16:00</span><div>Hueco libre<small>Canceló ayer · avisada la lista de espera</small></div><span class="est libre">Liberado</span></div>
+        <div class="cita"><span class="h">17:30</span><div>Antía<small>Mariposa · tobillo</small></div><span class="est pend">Pendiente</span></div>
+      </div>
+      <div class="noti">
+        <small><span>Recordatorio</span><span>ayer, 18:00</span></small>
+        <b>Tu cita es mañana a las 17:30</b>¿Nos vemos en el estudio?
+        <div class="r"><span>Confirmar</span><span>Cambiar</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pie"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#1F4D4A"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#C0522B" stroke-width="3"/>
+  <text x="32" y="38.5" text-anchor="middle" font-family="Archivo, 'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="17" letter-spacing="0.5" fill="#EDE5D6">NLV</text>
+</svg>
+Nadia Lagoa Vilela</span><span>nadialavi.work@gmail.com</span><span class="n">04</span></div>
+</section>
+
+<!-- ============ 5 · PANEL ============ -->
+<section class="page">
+  <div class="banda"><div class="gigante">04</div><span class="tag">Servicio 04 · Panel de ventas y stock</span><h2>Tu negocio en una pantalla, sin Excel</h2></div>
+  <div class="cuerpo">
+    <p class="intro">Lo que vendes, lo que más sale y lo que se está acabando. Lo miras desde el móvil, aunque no estés en la tienda.</p>
+    <ul class="gana">
+      <li>Compras justo lo que hace falta</li>
+      <li>Sabes qué promocionar y cuándo</li>
+      <li>Te avisa antes de quedarte sin algo</li>
+    </ul>
+    <div class="escena">
+      <span class="sello">Ejemplo de una tienda cotidiana</span>
+      <div class="panel">
+        <div class="kpi"><div><small>Ventas esta semana</small><b>2.340 €</b></div><span class="sube">▲ más que la semana pasada</span></div>
+        <div class="barras">
+          <div style="height:45%"><span>L</span></div><div style="height:38%"><span>M</span></div><div style="height:52%"><span>X</span></div><div style="height:48%"><span>J</span></div><div style="height:70%"><span>V</span></div><div class="hoy" style="height:92%"><span>S</span></div><div style="height:60%"><span>D</span></div>
+        </div>
+        <div class="mini"><small>Lo que más sale</small><ol><li>Bica gallega</li><li>Pan de centeno</li><li>Empanada</li></ol></div>
+        <div class="mini alerta"><small>Aviso de stock</small>Harina de centeno: quedan 2 sacos. Al ritmo de esta semana, llegan hasta el martes.</div>
+      </div>
+    </div>
+  </div>
+  <div class="pie"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#1F4D4A"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#C0522B" stroke-width="3"/>
+  <text x="32" y="38.5" text-anchor="middle" font-family="Archivo, 'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="17" letter-spacing="0.5" fill="#EDE5D6">NLV</text>
+</svg>
+Nadia Lagoa Vilela</span><span>nadialavi.work@gmail.com</span><span class="n">05</span></div>
+</section>
+
+<!-- ============ 6 · TODO EN UN SITIO ============ -->
+<section class="page p6">
+  <div class="inner">
+    <span class="label">Todo en un solo sitio</span>
+    <div class="top">
+      <div>
+        <h2>Tu trabajo, tus productos y tus reseñas juntos</h2>
+        <p>Enseña tus obras, tu arte o tus mejores productos en una galería, con tus reseñas de Google al lado. El cliente lo ve todo en un sitio, sin saltar de una plataforma a otra.</p>
+        <div class="antes"><span>Instagram</span><span>Google</span><span>Facebook</span><span>WhatsApp</span><span>Fotos sueltas</span></div>
+      </div>
+      <div class="flecha">→</div>
+      <div class="tuweb">
+        <div class="t">Tu web · galería</div>
+        <div class="galeria">
+          <i style="background:#1F4D4A"></i><i style="background:#C0522B"></i><i style="background:#D4AA66"></i>
+          <i style="background:#6E7874"></i><i style="background:#D8CBAE"></i><i style="background:#173B39"></i>
+        </div>
+        <div class="resena"><b>★★★★★</b> "Salí encantada, repetiré seguro."<small>Ejemplo: así se verían tus reseñas de Google</small></div>
+      </div>
+    </div>
+    <div class="tambien">
+      <h3>Y también, si tu negocio lo necesita</h3>
+      <div class="grid-extra">
+        <div class="extra"><b>Tienda online completa</b><span>Catálogo, carrito y envíos.</span></div>
+        <div class="extra"><b>Facturas que se hacen solas</b><span>Del pedido a la factura sin copiar datos.</span></div>
+        <div class="extra"><b>Páginas para promociones</b><span>Rebajas, Navidad, fiestas del pueblo.</span></div>
+        <div class="extra"><b>Fidelización en el móvil</b><span>La tarjeta de sellos, sin papel.</span></div>
+        <div class="extra"><b>Apps a medida</b><span>Solo lo que tu negocio necesita.</span></div>
+        <div class="extra"><b>Portal para clientes</b><span>Pedidos y presupuestos en un sitio.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pie"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#1F4D4A"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#C0522B" stroke-width="3"/>
+  <text x="32" y="38.5" text-anchor="middle" font-family="Archivo, 'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="17" letter-spacing="0.5" fill="#EDE5D6">NLV</text>
+</svg>
+Nadia Lagoa Vilela</span><span>nadialavi.work@gmail.com</span><span class="n">06</span></div>
+</section>
+
+<!-- ============ 7 · CÓMO TRABAJO ============ -->
+<section class="page p7">
+  <div class="inner">
+    <span class="label">Cómo trabajo</span>
+    <h2>Tres pasos, sin papeleo y sin sorpresas</h2>
+    <div class="paso"><div class="num">1</div><div><h3>Un café de 15 minutos</h3><p>Vemos tu negocio y lo que más tiempo te quita. Gratis y sin compromiso.</p></div></div>
+    <div class="paso"><div class="num">2</div><div><h3>Lo monto en semanas</h3><p>Vas viendo avances y opinas en cada paso.</p></div></div>
+    <div class="paso"><div class="num">3</div><div><h3>Te enseño y es tuyo</h3><p>Te enseño a usarlo y todo queda a tu nombre.</p></div></div>
+    <div class="sello-grande">Trato<br>directo,<br>sin<br>agencias</div>
+  </div>
+  <div class="pie"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#1F4D4A"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#C0522B" stroke-width="3"/>
+  <text x="32" y="38.5" text-anchor="middle" font-family="Archivo, 'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="17" letter-spacing="0.5" fill="#EDE5D6">NLV</text>
+</svg>
+Nadia Lagoa Vilela</span><span>nadialavi.work@gmail.com</span><span class="n">07</span></div>
+</section>
+
+<!-- ============ 8 · CONTRAPORTADA ============ -->
+<section class="page p8">
+  <div class="inner">
+    <span class="label" style="background:var(--amber); color:#FFF6EC;">El siguiente paso</span>
+    <h2>¿Tomamos <em>un café?</em></h2>
+    <p class="sub">En 15 minutos te enseño cómo te ve hoy un cliente en Google y una mejora que puedes aplicar ya, trabajes conmigo o no.</p>
+    <span class="cta">Reserva tus 15 minutos</span>
+    <div class="fila">
+      <div>
+        <div class="ticket">
+          <div class="t">Tu diagnóstico</div>
+          <div class="row"><span>Revisión en Google</span><span>✓</span></div>
+          <div class="row"><span>Tareas que te roban tiempo</span><span>✓</span></div>
+          <div class="row"><span>Una idea para aplicar ya</span><span>✓</span></div>
+          <div class="row"><span>Duración</span><span>15 min</span></div>
+          <div class="row tot"><span>Total</span><span>0,00 €</span></div>
+        </div>
+        <div class="contacto"><b>Nadia Lagoa Vilela</b>Desarrolladora de software<br><span class="mail">nadialavi.work@gmail.com</span></div>
+      </div>
+      <div class="qrbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path fill="#FFFDF8" d="M0 0h29v29H0z"/><path stroke="#173B39" d="M0 0.5h7m1 0h1m2 0h2m2 0h2m2 0h2m1 0h7M0 1.5h1m5 0h1m1 0h1m5 0h2m2 0h1m1 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m3 0h6m4 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h2m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m2 0h1m2 0h2m3 0h1m1 0h2m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m3 0h1m1 0h1m1 0h1m3 0h3m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m3 0h3m2 0h2m1 0h1M0 8.5h1m1 0h2m1 0h3m4 0h3m1 0h4m2 0h1m2 0h1m1 0h2M2 9.5h1m1 0h2m2 0h2m1 0h2m2 0h2m2 0h6m3 0h1M0 10.5h1m2 0h2m1 0h1m2 0h1m1 0h2m1 0h2m6 0h1m1 0h1m1 0h2M0 11.5h3m2 0h1m1 0h3m2 0h4m3 0h1m1 0h2m5 0h1M1 12.5h1m4 0h2m3 0h2m4 0h1m1 0h1m3 0h1m1 0h2M0 13.5h3m5 0h2m2 0h2m3 0h1m1 0h1m2 0h1m3 0h3M4 14.5h1m1 0h3m2 0h1m2 0h1m2 0h1m1 0h1m1 0h4m1 0h3M1 15.5h1m1 0h3m3 0h3m1 0h1m2 0h1m3 0h1m3 0h1m2 0h1M1 16.5h3m1 0h2m1 0h2m1 0h1m3 0h1m2 0h1m1 0h2m2 0h2m1 0h1M2 17.5h1m1 0h1m6 0h3m1 0h2m3 0h2m1 0h1m1 0h3M0 18.5h1m2 0h2m1 0h1m1 0h2m2 0h1m2 0h1m4 0h2m1 0h1m2 0h1M2 19.5h1m1 0h1m2 0h1m9 0h2m1 0h1m1 0h1m1 0h1m1 0h1M1 20.5h1m2 0h1m1 0h1m2 0h1m2 0h2m3 0h10M8 21.5h2m2 0h3m1 0h3m1 0h1m3 0h5M0 22.5h7m1 0h6m3 0h4m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h4m4 0h1m3 0h1m3 0h2m1 0h2M0 24.5h1m1 0h3m1 0h1m3 0h2m2 0h5m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h2m1 0h6m6 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h3m1 0h3m2 0h2m1 0h1m2 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m2 0h7m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1M0 28.5h7m1 0h1m3 0h1m1 0h1m3 0h4m5 0h1"/></svg>
+<small>escanéame →</small></div>
+    </div>
+  </div>
+  <div class="pie"><span>Hecho en Galicia</span><span>dossier-nadia.vercel.app</span><span class="n">08</span></div>
+</section>
+
+</body>
+</html>
