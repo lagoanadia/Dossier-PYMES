@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Flyer de servicios · Nadia Lagoa Vilela</title>
+<link rel="stylesheet" href="../imprimir/fonts-local.css">
+<style>
+  @page{size:A4; margin:0}
+  :root{
+    --paper:#EDE5D6; --paper-2:#E2D8C4; --card:#FFFBF3;
+    --ink:#1B2624; --ink-soft:#44504C; --line:#C9BEA8;
+    --mar:#1F4D4A; --mar-2:#173B39; --amber:#C0522B; --amber-soft:#F2D3BF;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0; padding:0; background:#888}
+  body{font-family:'Work Sans',system-ui,sans-serif; color:var(--ink); font-size:9pt; line-height:1.35; -webkit-font-smoothing:antialiased; print-color-adjust:exact; -webkit-print-color-adjust:exact}
+  .page{width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; margin:0 auto}
+
+  h1,h2,h3{font-family:'Archivo','Arial Narrow',sans-serif; font-stretch:78%; font-weight:800; text-transform:uppercase; margin:0; line-height:.95; letter-spacing:.005em}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .script{font-family:'Fraunces',Georgia,serif; font-style:italic}
+
+  /* cabecera */
+  header{background:var(--mar); color:var(--paper); padding:9mm 14mm 8mm; position:relative}
+  header .top{display:flex; justify-content:space-between; align-items:center; font-family:'IBM Plex Mono',monospace; font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:#B9CFC9; margin-bottom:4.5mm}
+  header h1{font-size:32pt; color:var(--paper); max-width:160mm}
+  header h1 .script{text-transform:none; font-weight:500; color:#F2B48F; letter-spacing:0}
+  header p{margin:3mm 0 0; font-size:9.5pt; max-width:125mm; color:#DCE7E3}
+  .badge{position:absolute; right:14mm; bottom:-8mm; background:var(--amber); color:#fff; width:31mm; height:31mm; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; transform:rotate(8deg); box-shadow:0 1mm 0 var(--mar-2)}
+  .badge b{font-family:'Archivo',sans-serif; font-stretch:70%; font-weight:800; font-size:13pt; line-height:.95; text-transform:uppercase}
+  .badge span{font-size:5.6pt; max-width:20mm; line-height:1.2; letter-spacing:.08em; text-transform:uppercase; margin-top:1mm}
+
+  /* servicios */
+  main{padding:9mm 14mm 0}
+  .sec-title{display:flex; align-items:baseline; gap:4mm; margin-bottom:3mm}
+  .sec-title h2{font-size:15pt; color:var(--mar)}
+  .sec-title .mono{font-size:7pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft)}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:3.5mm}
+  .card{background:var(--card); border:1pt solid var(--line); border-radius:2mm; padding:3.6mm 5mm 3.4mm; position:relative}
+  .card .num{font-family:'IBM Plex Mono',monospace; font-size:7pt; letter-spacing:.14em; color:var(--amber)}
+  .card h3{font-size:13.5pt; color:var(--mar); margin:.8mm 0 2mm}
+  .price{display:flex; align-items:baseline; gap:2mm; margin-bottom:2.2mm; padding-bottom:2.2mm; border-bottom:1pt dashed var(--line)}
+  .price b{font-family:'Archivo',sans-serif; font-stretch:80%; font-weight:800; font-size:20pt; color:var(--amber); line-height:1}
+  .price span{font-size:7.6pt; color:var(--ink-soft)}
+  ul{list-style:none; margin:0; padding:0}
+  li{position:relative; padding-left:4mm; margin-bottom:1mm; font-size:8.4pt; line-height:1.3}
+  li::before{content:"✓"; position:absolute; left:0; top:0; color:var(--mar); font-weight:700; font-size:8pt}
+  .no{margin-top:2.2mm; font-size:7.3pt; color:var(--ink-soft); font-style:italic}
+
+  /* pack */
+  .pack{margin-top:3.5mm; background:var(--amber); color:#fff; border-radius:2mm; padding:4.2mm 6mm; display:flex; align-items:center; justify-content:space-between; gap:6mm}
+  .pack h3{font-size:13pt; color:#fff}
+  .pack p{margin:.8mm 0 0; font-size:8pt; color:#FBE6DA}
+  .pack .big{font-family:'Archivo',sans-serif; font-stretch:80%; font-weight:800; font-size:22pt; line-height:1; white-space:nowrap}
+  .pack .big small{display:block; font-family:'Work Sans',sans-serif; font-stretch:100%; font-weight:500; font-size:7.6pt; text-align:right; margin-top:1mm; color:#FBE6DA}
+
+  /* condiciones */
+  .cond{margin-top:4.5mm; display:grid; grid-template-columns:repeat(4,1fr); gap:3mm}
+  .cond div{border-top:2pt solid var(--mar); padding-top:2mm}
+  .cond b{display:block; font-family:'Archivo',sans-serif; font-stretch:82%; font-weight:800; text-transform:uppercase; font-size:9.5pt; color:var(--mar); margin-bottom:.8mm}
+  .cond span{font-size:8pt; color:var(--ink-soft)}
+
+  /* contacto */
+  footer{position:absolute; left:0; right:0; bottom:0; background:var(--mar-2); color:var(--paper); padding:5mm 14mm; display:flex; justify-content:space-between; align-items:center; gap:8mm}
+  footer h2{font-size:16pt; color:var(--paper)}
+  footer h2 .script{text-transform:none; font-weight:500; color:#F2B48F}
+  footer p{margin:1mm 0 0; font-size:8pt; color:#B9CFC9}
+  .contact{font-size:8.2pt; text-align:right; line-height:1.55}
+  .contact b{font-family:'IBM Plex Mono',monospace; font-weight:500}
+  .contact .name{font-family:'Archivo',sans-serif; font-stretch:82%; font-weight:800; text-transform:uppercase; font-size:11pt; letter-spacing:.04em; color:#F2B48F}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="top"><span>Nadia Lagoa Vilela · Servicios digitales</span><span>A Coruña · Costa da Morte</span></div>
+    <h1>Tu negocio sigue vendiendo <span class="script">cuando tú cierras.</span></h1>
+    <p>Web, reservas, WhatsApp y Google Maps para comercios y negocios pequeños. A medida, con tu identidad, no una plantilla genérica.</p>
+    <div class="badge"><b>Precio<br>lanzamiento</b><span>primeros<br>5 clientes</span></div>
+  </header>
+
+  <main>
+    <div class="sec-title"><h2>Qué incluye cada servicio</h2><span class="mono">Precios sin IVA · mantenimiento opcional</span></div>
+
+    <div class="grid">
+      <section class="card">
+        <div class="num">01</div>
+        <h3>Web con galería y reservas</h3>
+        <div class="price"><b>350 €</b><span>+ 20 €/mes de mantenimiento</span></div>
+        <ul>
+          <li>Hasta 5 secciones: inicio, galería, servicios, reservas y contacto</li>
+          <li>Diseño con tu logo, colores y estilo</li>
+          <li>Reservas desde el móvil con recordatorio automático</li>
+          <li>Ficha de Google Maps revisada y enlazada</li>
+          <li>2 rondas de cambios y sesión de 30 min para aprender a usarla</li>
+          <li>Dominio y alojamiento a tu nombre</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="num">02</div>
+        <h3>Asistente de WhatsApp</h3>
+        <div class="price"><b>250 €</b><span>+ 25 €/mes de mantenimiento</span></div>
+        <ul>
+          <li>Responde horarios, precios, dirección y servicios al momento</li>
+          <li>Ofrece huecos libres y apunta la cita</li>
+          <li>En castellano y en gallego</li>
+          <li>Te pasa la conversación cuando hace falta una persona</li>
+          <li>Pruebas antes de entregar y sesión de 30 min</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="num">03</div>
+        <h3>Tienda online pequeña</h3>
+        <div class="price"><b>550 €</b><span>+ 25 €/mes de mantenimiento</span></div>
+        <ul>
+          <li>Hasta 20 productos con foto, descripción y precio</li>
+          <li>Pago con tarjeta y Bizum</li>
+          <li>Recogida en tienda o envío</li>
+          <li>Aviso por email con cada pedido</li>
+          <li>Textos legales básicos incluidos</li>
+          <li>2 rondas de cambios y sesión de 45 min</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="num">04</div>
+        <h3>Google Maps y SEO local</h3>
+        <div class="price"><b>150 €</b><span>pago único</span></div>
+        <ul>
+          <li>Revisión de tu ficha con informe sencillo</li>
+          <li>Horario, categoría, descripción y servicios optimizados</li>
+          <li>Selección y orden de fotos</li>
+          <li>Plantilla para responder reseñas</li>
+          <li>Palabras clave para aparecer en «cerca de mí»</li>
+        </ul>
+        <div class="no">Mejoramos tu visibilidad; no se puede garantizar una posición concreta en Google.</div>
+      </section>
+    </div>
+
+    <div class="pack">
+      <div>
+        <h3>Pack web + reservas + WhatsApp</h3>
+        <p>Todo en un solo sitio y con descuento. Mantenimiento conjunto más barato que por separado.</p>
+      </div>
+      <div class="big">550 €<small>+ 35 €/mes</small></div>
+    </div>
+
+    <div class="cond">
+      <div><b>Contrato</b><span>Precio, alcance y plazos por escrito antes de empezar.</span></div>
+      <div><b>Pago 50 / 50</b><span>La mitad al empezar y la mitad al entregar.</span></div>
+      <div><b>2 a 4 semanas</b><span>Desde que me pasas fotos y textos.</span></div>
+      <div><b>Todo a tu nombre</b><span>Dominio y alojamiento son tuyos.</span></div>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <h2>¿Tomamos <span class="script">un café?</span></h2>
+      <p>15 minutos, gratis. Te enseño cómo te ve hoy un cliente en Google<br>y una mejora que puedes aplicar ya, trabajes conmigo o no.</p>
+    </div>
+    <div class="contact">
+      <div class="name">Nadia Lagoa Vilela</div>
+      <div><b>nadialavi.work@gmail.com</b></div>
+      <div><b>+34 613 597 453</b></div>
+      <div><b>dossier-nadia.vercel.app</b></div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
