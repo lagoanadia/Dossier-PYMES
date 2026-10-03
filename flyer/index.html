@@ -40,8 +40,9 @@
   .card .num{font-family:'IBM Plex Mono',monospace; font-size:7pt; letter-spacing:.14em; color:var(--amber)}
   .card h3{font-size:13.5pt; color:var(--mar); margin:.8mm 0 2mm}
   .price{display:flex; align-items:baseline; gap:2mm; margin-bottom:2.2mm; padding-bottom:2.2mm; border-bottom:1pt dashed var(--line)}
-  .price b{font-family:'Archivo',sans-serif; font-stretch:80%; font-weight:800; font-size:20pt; color:var(--amber); line-height:1}
+  .price b{white-space:nowrap; font-family:'Archivo',sans-serif; font-stretch:80%; font-weight:800; font-size:20pt; color:var(--amber); line-height:1}
   .price span{font-size:7.6pt; color:var(--ink-soft)}
+  .price .plazo{margin-left:auto; align-self:center; white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-size:6.8pt; letter-spacing:.04em; text-transform:uppercase; color:var(--mar); background:var(--paper-2); border-radius:10mm; padding:1mm 2.6mm}
   ul{list-style:none; margin:0; padding:0}
   li{position:relative; padding-left:4mm; margin-bottom:1mm; font-size:8.4pt; line-height:1.3}
   li::before{content:"✓"; position:absolute; left:0; top:0; color:var(--mar); font-weight:700; font-size:8pt}
@@ -87,7 +88,7 @@
       <section class="card">
         <div class="num">01</div>
         <h3>Web con galería y reservas</h3>
-        <div class="price"><b>350 €</b><span>+ 20 €/mes de mantenimiento</span></div>
+        <div class="price"><b>350 €</b><span>+ 20 €/mes</span><span class="plazo">⏱ 3 a 4 semanas</span></div>
         <ul>
           <li>Hasta 5 secciones: inicio, galería, servicios, reservas y contacto</li>
           <li>Diseño con tu logo, colores y estilo</li>
@@ -101,7 +102,7 @@
       <section class="card">
         <div class="num">02</div>
         <h3>Asistente de WhatsApp</h3>
-        <div class="price"><b>250 €</b><span>+ 25 €/mes de mantenimiento</span></div>
+        <div class="price"><b>250 €</b><span>+ 25 €/mes</span><span class="plazo">⏱ 2 a 3 semanas</span></div>
         <ul>
           <li>Responde horarios, precios, dirección y servicios al momento</li>
           <li>Ofrece huecos libres y apunta la cita</li>
@@ -114,7 +115,7 @@
       <section class="card">
         <div class="num">03</div>
         <h3>Tienda online pequeña</h3>
-        <div class="price"><b>550 €</b><span>+ 25 €/mes de mantenimiento</span></div>
+        <div class="price"><b>550 €</b><span>+ 25 €/mes</span><span class="plazo">⏱ 4 a 6 semanas</span></div>
         <ul>
           <li>Hasta 20 productos con foto, descripción y precio</li>
           <li>Pago con tarjeta y Bizum</li>
@@ -128,7 +129,7 @@
       <section class="card">
         <div class="num">04</div>
         <h3>Google Maps y SEO local</h3>
-        <div class="price"><b>150 €</b><span>pago único</span></div>
+        <div class="price"><b>150 €</b><span>pago único</span><span class="plazo">⏱ 1 semana</span></div>
         <ul>
           <li>Revisión de tu ficha con informe sencillo</li>
           <li>Horario, categoría, descripción y servicios optimizados</li>
@@ -145,13 +146,13 @@
         <h3>Pack web + reservas + WhatsApp</h3>
         <p>Todo en un solo sitio y con descuento. Mantenimiento conjunto más barato que por separado.</p>
       </div>
-      <div class="big">550 €<small>+ 35 €/mes</small></div>
+      <div class="big">550 €<small>+ 35 €/mes · ⏱ 5 a 7 semanas</small></div>
     </div>
 
     <div class="cond">
       <div><b>Contrato</b><span>Precio, alcance y plazos por escrito antes de empezar.</span></div>
       <div><b>Pago 50 / 50</b><span>La mitad al empezar y la mitad al entregar.</span></div>
-      <div><b>2 a 4 semanas</b><span>Desde que me pasas fotos y textos.</span></div>
+      <div><b>Plazos orientativos</b><span>Cuentan desde que me pasas fotos y textos.</span></div>
       <div><b>Todo a tu nombre</b><span>Dominio y alojamiento son tuyos.</span></div>
     </div>
   </main>
